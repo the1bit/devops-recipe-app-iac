@@ -229,3 +229,9 @@ Or find them below:
 ## Educational Resources
 
 - [Cloud Mentor](https://cloudmentor.hu)
+- [AWS](https://aws.amazon.com/)
+- [Terraform](https://www.terraform.io/)
+- [Docker](https://www.docker.com/)
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
+
