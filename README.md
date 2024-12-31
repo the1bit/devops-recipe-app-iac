@@ -235,3 +235,16 @@ Or find them below:
 - [Django](https://www.djangoproject.com/)
 - [Django REST Framework](https://www.django-rest-framework.org/)
 
+## RDS Database
+
+Confirm Service-Linked Role
+The error message points to RDS-specific IAM service-linked roles. These roles allow AWS to perform actions on your behalf. Check if the role exists:
+
+1. Go to the IAM console.
+2. Navigate to Roles.
+3. Search for AWSServiceRoleForRDS.
+4. If it doesn’t exist, create it manually:
+
+```bash
+aws iam create-service-linked-role --aws-service-name rds.amazonaws.com
+```
