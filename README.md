@@ -264,3 +264,9 @@ The ECS service-linked role is required for ECS to manage resources on your beha
 ```bash
 aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
 ```
+
+### Executing Commands on ECS Task
+
+```bash
+aws ecs execute-command --region eu-north-1 --cluster raa-staging-cluster --task e615a9b31bc34d1a8bb9c76955c43c33 --container api --interactive --command "/bin/sh"
+```
