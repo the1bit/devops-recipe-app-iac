@@ -5,6 +5,11 @@ on:
     branches:
       - main
       - prod
+    paths-ignore:
+      - '**/*.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.github/workflows/**'
 
 jobs:
   test-lint:
