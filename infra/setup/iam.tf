@@ -135,6 +135,8 @@ data "aws_iam_policy_document" "ec2" {
       "ec2:AttachInternetGateway",
       "ec2:ModifyVpcAttribute",
       "ec2:RevokeSecurityGroupIngress",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeAvailabilityZones"
     ]
     resources = ["*"]
   }
@@ -246,6 +248,7 @@ data "aws_iam_policy_document" "iam" {
       "iam:GetPolicy",
       "iam:CreateRole",
       "iam:CreatePolicy",
+      "iam:CreateServiceLinkedRole",
       "iam:AttachRolePolicy",
       "iam:TagRole",
       "iam:TagPolicy",
