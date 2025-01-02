@@ -248,3 +248,17 @@ The error message points to RDS-specific IAM service-linked roles. These roles a
 ```bash
 aws iam create-service-linked-role --aws-service-name rds.amazonaws.com
 ```
+
+
+### ECS Service Linked Role
+
+The ECS service-linked role is required for ECS to manage resources on your behalf. Check if the role exists:
+
+1. Go to the IAM console.
+2. Navigate to Roles.
+3. Search for AWSServiceRoleForECS.
+4. If it doesn’t exist, create it manually:
+
+```bash
+aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
+```
