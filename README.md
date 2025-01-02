@@ -242,7 +242,8 @@ The error message points to RDS-specific IAM service-linked roles. These roles a
 
 1. Go to the IAM console.
 2. Navigate to Roles.
-3. Search for AWSServiceRoleForRDS.
+3. Search for AWSServiceRoleForRDS. (Or run the following commend in the terminal: `aws iam get-role --role-name AWSServiceRoleForRDS
+`)
 4. If it doesn’t exist, create it manually:
 
 ```bash
@@ -256,7 +257,8 @@ The ECS service-linked role is required for ECS to manage resources on your beha
 
 1. Go to the IAM console.
 2. Navigate to Roles.
-3. Search for AWSServiceRoleForECS.
+3. Search for AWSServiceRoleForECS. (Or run the following commend in the terminal: `aws iam get-role --role-name AWSServiceRoleForECS
+`)
 4. If it doesn’t exist, create it manually:
 
 ```bash
