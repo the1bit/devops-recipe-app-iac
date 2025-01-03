@@ -270,3 +270,7 @@ aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
 ```bash
 aws ecs execute-command --region eu-north-1 --cluster raa-staging-cluster --task e615a9b31bc34d1a8bb9c76955c43c33 --container api --interactive --command "/bin/sh"
 ```
+
+### EFS File System
+
+To fix "AccessDeniedException: User is not authorized to perform that action on the specified resource" issue you should add the `"ec2:DescribeNetworkInterfaceAttribute"` to the EFS policy in `infra/setup/iam.tf`.
