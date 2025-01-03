@@ -382,8 +382,6 @@ resource "aws_iam_user_policy_attachment" "efs" {
   policy_arn = aws_iam_policy.efs.arn
 }
 
-
-
 #############################
 # Policy for Route53 access #
 #############################
