@@ -268,8 +268,17 @@ aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
 ### Executing Commands on ECS Task
 
 ```bash
-aws ecs execute-command --region eu-north-1 --cluster raa-staging-cluster --task e615a9b31bc34d1a8bb9c76955c43c33 --container api --interactive --command "/bin/sh"
+aws ecs execute-command --region eu-north-1 --cluster raa-staging-cluster --task 547feeba67c54b0a86d13a9de9faeec7 --container api --interactive --command "/bin/sh"
 ```
+
+Create superuser:
+
+```bash
+python manage.py createsuperuser
+```
+
+Then type the email and the password for the superuser. (Example: eIvg0JalGKmR8Dc)
+
 
 ### EFS File System
 
