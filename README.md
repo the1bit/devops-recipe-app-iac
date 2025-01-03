@@ -242,9 +242,44 @@ The error message points to RDS-specific IAM service-linked roles. These roles a
 
 1. Go to the IAM console.
 2. Navigate to Roles.
-3. Search for AWSServiceRoleForRDS.
+3. Search for AWSServiceRoleForRDS. (Or run the following commend in the terminal: `aws iam get-role --role-name AWSServiceRoleForRDS
+`)
 4. If it doesn’t exist, create it manually:
 
 ```bash
 aws iam create-service-linked-role --aws-service-name rds.amazonaws.com
 ```
+
+
+### ECS Service Linked Role
+
+The ECS service-linked role is required for ECS to manage resources on your behalf. Check if the role exists:
+
+1. Go to the IAM console.
+2. Navigate to Roles.
+3. Search for AWSServiceRoleForECS. (Or run the following commend in the terminal: `aws iam get-role --role-name AWSServiceRoleForECS
+`)
+4. If it doesn’t exist, create it manually:
+
+```bash
+aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
+```
+
+### Executing Commands on ECS Task
+
+```bash
+aws ecs execute-command --region eu-north-1 --cluster raa-staging-cluster --task 547feeba67c54b0a86d13a9de9faeec7 --container api --interactive --command "/bin/sh"
+```
+
+Create superuser:
+
+```bash
+python manage.py createsuperuser
+```
+
+Then type the email and the password for the superuser. (Example: eIvg0JalGKmR8Dc)
+
+
+### EFS File System
+
+To fix "AccessDeniedException: User is not authorized to perform that action on the specified resource" issue you should add the `"ec2:DescribeNetworkInterfaceAttribute"` to the EFS policy in `infra/setup/iam.tf`.
